@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MailProbe – Stop Fake Signups 0.1.3\n"
-"Report-Msgid-Bugs-To: https://github.com/MailProbe/wordpress/issues\n"
+"Report-Msgid-Bugs-To: https://github.com/mailprobe/wordpress/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
