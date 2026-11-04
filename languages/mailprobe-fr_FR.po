@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MailProbe – Stop Fake Signups 0.1.3\n"
+"Project-Id-Version: MailProbe – Stop Fake Signups 0.1.4\n"
 "Report-Msgid-Bugs-To: https://github.com/mailprobe/wordpress/issues\n"
 "Last-Translator: Iris Digital\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-14T12:47:31+00:00\n"
-"PO-Revision-Date: 2026-10-20 12:00+0000\n"
+"POT-Creation-Date: 2026-11-04T11:49:18+00:00\n"
+"PO-Revision-Date: 2026-11-04 12:00+0000\n"
 "Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: WP-CLI 2.12.0\n"
@@ -150,6 +150,48 @@ msgstr "Activité"
 #: includes/class-mailprobe-admin.php:261
 msgid "No address checked yet."
 msgstr "Aucune adresse vérifiée pour l’instant."
+
+#. translators: %s: number of addresses.
+#: includes/class-mailprobe-admin.php:271
+#, php-format
+msgid "%s address checked"
+msgid_plural "%s addresses checked"
+msgstr[0] "%s adresse vérifiée"
+msgstr[1] "%s adresses vérifiées"
+
+#. translators: %s: number of registrations.
+#: includes/class-mailprobe-admin.php:273
+#, php-format
+msgid "%s registration refused"
+msgid_plural "%s registrations refused"
+msgstr[0] "%s inscription refusée"
+msgstr[1] "%s inscriptions refusées"
+
+#. translators: %s: number of orders.
+#: includes/class-mailprobe-admin.php:275
+#, php-format
+msgid "%s order flagged"
+msgid_plural "%s orders flagged"
+msgstr[0] "%s commande signalée"
+msgstr[1] "%s commandes signalées"
+
+#. translators: 1: date, 2: the three counts as a list, for example "8 addresses checked, 2 registrations refused, and 1 order flagged".
+#: includes/class-mailprobe-admin.php:280
+#, php-format
+msgid "Since %1$s: %2$s."
+msgstr "Depuis le %1$s : %2$s."
+
+#: includes/class-mailprobe-admin.php:293
+msgid "MailProbe on WordPress.org:"
+msgstr "MailProbe sur WordPress.org :"
+
+#: includes/class-mailprobe-admin.php:295
+msgid "support forum"
+msgstr "forum de support"
+
+#: includes/class-mailprobe-admin.php:297
+msgid "leave a review"
+msgstr "laisser un avis"
 
 #. translators: 1: sign-up URL.
 #: includes/class-mailprobe-admin.php:313
@@ -342,39 +384,43 @@ msgid "the domain has no mail server"
 msgstr "le domaine n’a pas de serveur de messagerie"
 
 #: includes/class-mailprobe-policy.php:120
+msgid "the domain has no active mail service"
+msgstr "le domaine n’a pas de service de messagerie actif"
+
+#: includes/class-mailprobe-policy.php:121
 msgid "the mail server of the domain cannot be found"
 msgstr "le serveur de messagerie du domaine est introuvable"
 
-#: includes/class-mailprobe-policy.php:121
+#: includes/class-mailprobe-policy.php:122
 msgid "the mail server of the domain is not reachable from the internet"
 msgstr "le serveur de messagerie du domaine n’est pas joignable depuis Internet"
 
-#: includes/class-mailprobe-policy.php:122
+#: includes/class-mailprobe-policy.php:123
 msgid "the mailbox is full"
 msgstr "la boîte de réception est pleine"
 
-#: includes/class-mailprobe-policy.php:123
+#: includes/class-mailprobe-policy.php:124
 msgid "the domain accepts every address, so this mailbox cannot be confirmed"
 msgstr "le domaine accepte toutes les adresses, cette boîte ne peut donc pas être confirmée"
 
-#: includes/class-mailprobe-policy.php:124
+#: includes/class-mailprobe-policy.php:125
 msgid "the email provider does not allow checks"
 msgstr "le fournisseur de messagerie n’autorise pas les vérifications"
 
-#: includes/class-mailprobe-policy.php:125
 #: includes/class-mailprobe-policy.php:126
+#: includes/class-mailprobe-policy.php:127
 msgid "the mail server asked to try again later"
 msgstr "le serveur de messagerie demande de réessayer ultérieurement"
 
-#: includes/class-mailprobe-policy.php:127
+#: includes/class-mailprobe-policy.php:128
 msgid "the mail server did not answer in time"
 msgstr "le serveur de messagerie n’a pas répondu à temps"
 
-#: includes/class-mailprobe-policy.php:133
+#: includes/class-mailprobe-policy.php:134
 msgid "the mailbox does not exist"
 msgstr "la boîte de réception n’existe pas"
 
-#: includes/class-mailprobe-policy.php:138
+#: includes/class-mailprobe-policy.php:139
 msgid "no detail"
 msgstr "sans détail"
 
@@ -399,45 +445,3 @@ msgstr "Cette adresse ne peut pas recevoir d’e-mails. Vouliez-vous dire %s ?"
 #: includes/class-mailprobe-registration.php:161
 msgid "This email address cannot receive emails. Please check it and try again."
 msgstr "Cette adresse ne peut pas recevoir d’e-mails. Veuillez la vérifier et réessayer."
-
-#. translators: %s: number of addresses.
-#: includes/class-mailprobe-admin.php:271
-#, php-format
-msgid "%s address checked"
-msgid_plural "%s addresses checked"
-msgstr[0] "%s adresse vérifiée"
-msgstr[1] "%s adresses vérifiées"
-
-#. translators: %s: number of registrations.
-#: includes/class-mailprobe-admin.php:273
-#, php-format
-msgid "%s registration refused"
-msgid_plural "%s registrations refused"
-msgstr[0] "%s inscription refusée"
-msgstr[1] "%s inscriptions refusées"
-
-#. translators: %s: number of orders.
-#: includes/class-mailprobe-admin.php:275
-#, php-format
-msgid "%s order flagged"
-msgid_plural "%s orders flagged"
-msgstr[0] "%s commande signalée"
-msgstr[1] "%s commandes signalées"
-
-#. translators: 1: date, 2: the three counts as a list, for example "8 addresses checked, 2 registrations refused, and 1 order flagged".
-#: includes/class-mailprobe-admin.php:280
-#, php-format
-msgid "Since %1$s: %2$s."
-msgstr "Depuis le %1$s : %2$s."
-
-#: includes/class-mailprobe-admin.php:293
-msgid "MailProbe on WordPress.org:"
-msgstr "MailProbe sur WordPress.org :"
-
-#: includes/class-mailprobe-admin.php:295
-msgid "support forum"
-msgstr "forum de support"
-
-#: includes/class-mailprobe-admin.php:297
-msgid "leave a review"
-msgstr "laisser un avis"

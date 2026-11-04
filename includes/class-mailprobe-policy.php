@@ -117,6 +117,7 @@ class MailProbe_Policy {
 		$texts  = array(
 			'invalid_syntax'        => __( 'the address is not well formed', 'mailprobe' ),
 			'no_mx'                 => __( 'the domain has no mail server', 'mailprobe' ),
+			'no_mail_service'       => __( 'the domain has no active mail service', 'mailprobe' ),
 			'mx_unresolved'         => __( 'the mail server of the domain cannot be found', 'mailprobe' ),
 			'mx_private_ip'         => __( 'the mail server of the domain is not reachable from the internet', 'mailprobe' ),
 			'mailbox_full'          => __( 'the mailbox is full', 'mailprobe' ),

@@ -4,7 +4,7 @@ Tags: fake registration, spam registration, disposable email, email verification
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.3
+Stable tag: 0.1.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,9 @@ No, this version checks new registrations and new orders. To clean an existing l
 4. The settings page: API key and credit balance, registration rules, order checks and activity.
 
 == Changelog ==
+
+= 0.1.4 =
+* The private note of a flagged order says why when the billing email's domain has no active mail service (for example a Microsoft 365 domain whose subscriptions have ended). MailProbe now reports these addresses as unable to receive emails: they are refused at registration and flagged on orders, like any address that cannot receive emails.
 
 = 0.1.3 =
 * The settings page links to the plugin's support forum and to its reviews on WordPress.org.
