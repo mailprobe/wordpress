@@ -67,8 +67,9 @@ final class MailProbe {
 	 * @return string
 	 */
 	public static function api_key() {
-		if ( self::key_from_constant() ) {
-			return (string) MAILPROBE_API_KEY;
+		$key = self::constant_key();
+		if ( '' !== $key ) {
+			return $key;
 		}
 		$settings = self::settings();
 		return (string) $settings['api_key'];
@@ -80,7 +81,16 @@ final class MailProbe {
 	 * @return bool
 	 */
 	public static function key_from_constant() {
-		return defined( 'MAILPROBE_API_KEY' ) && '' !== (string) MAILPROBE_API_KEY;
+		return '' !== self::constant_key();
+	}
+
+	/**
+	 * The MAILPROBE_API_KEY constant, empty when wp-config.php does not set it.
+	 *
+	 * @return string
+	 */
+	private static function constant_key() {
+		return defined( 'MAILPROBE_API_KEY' ) ? (string) MAILPROBE_API_KEY : '';
 	}
 
 	/**

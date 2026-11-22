@@ -9,6 +9,7 @@ The user documentation is [`readme.txt`](readme.txt), in the format of the WordP
 | Where | When | What happens |
 |---|---|---|
 | WordPress registration form (`wp-login.php`) | before the account is created | refused when the address cannot receive emails, is disposable, or (optional) is a shared address such as `info@` |
+| Sign-up page of a multisite network (`wp-signup.php`) | same, with the settings of the main site | same; the users that administrators add are not checked |
 | WooCommerce "My account" registration | same | same |
 | WooCommerce checkout, classic and blocks | after the order, in the background (Action Scheduler) | never blocked; a flagged order gets a private note and a red mark in the orders list |
 
@@ -17,6 +18,7 @@ Rules that do not change with settings:
 - Addresses that cannot be confirmed (catch-all domains, providers that block probes such as Outlook, slow servers) are never refused.
 - Any error of MailProbe (network, no credits, key refused, timeout) lets the visitor through. The errors that stop every check (no credits, key refused) raise an admin notice until a check succeeds again.
 - At registration the visitor waits 3 seconds at most (`mailprobe_registration_wait`). The API is asked for 5 seconds, its minimum; a call cut while the address is still being probed is not charged.
+- A verdict is kept ten minutes for the same address, in a transient named after a hash of the address, which it does not hold: the two steps of a network sign-up that creates a site, or a refused address sent again, use one credit.
 - Every call carries the User-Agent `mailprobe-wordpress/<version> WordPress/<version> WooCommerce/<version>`, without the site address. MailProbe records `mailprobe-wordpress` on the API key that the plugin uses first: that is how the accounts brought by the plugin are counted.
 
 ## Hooks
@@ -29,6 +31,15 @@ Rules that do not change with settings:
 
 - `MAILPROBE_API_KEY`: the API key, instead of the settings page.
 - `MAILPROBE_API_BASE`: the API root, `https://mailprobe.dev/api/v1` by default. Only for tests.
+
+## Development
+
+```bash
+composer install
+composer analyse
+```
+
+PHPStan at level 5, against the stubs of WordPress and WooCommerce, from PHP 7.4. Composer brings these tools only: the plugin needs none, and `vendor/` stays out of the zip.
 
 ## Release
 

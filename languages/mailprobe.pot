@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: MailProbe – Stop Fake Signups 0.1.4\n"
+"Project-Id-Version: MailProbe – Stop Fake Signups 0.1.5\n"
 "Report-Msgid-Bugs-To: https://github.com/mailprobe/wordpress/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-04T11:49:18+00:00\n"
+"POT-Creation-Date: 2026-11-22T15:22:56+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: mailprobe\n"
@@ -424,24 +424,24 @@ msgstr ""
 msgid "no detail"
 msgstr ""
 
-#: includes/class-mailprobe-registration.php:51
+#: includes/class-mailprobe-registration.php:62
 msgid "Error:"
 msgstr ""
 
-#: includes/class-mailprobe-registration.php:151
+#: includes/class-mailprobe-registration.php:223
 msgid "Disposable email addresses are not accepted. Please use your usual email address."
 msgstr ""
 
-#: includes/class-mailprobe-registration.php:154
+#: includes/class-mailprobe-registration.php:226
 msgid "Please use a personal email address, not a shared one such as info@ or contact@."
 msgstr ""
 
 #. translators: %s: the email address with the likely typo corrected.
-#: includes/class-mailprobe-registration.php:159
+#: includes/class-mailprobe-registration.php:231
 #, php-format
 msgid "This email address cannot receive emails. Did you mean %s?"
 msgstr ""
 
-#: includes/class-mailprobe-registration.php:161
+#: includes/class-mailprobe-registration.php:233
 msgid "This email address cannot receive emails. Please check it and try again."
 msgstr ""

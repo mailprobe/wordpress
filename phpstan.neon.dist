@@ -1,0 +1,15 @@
+# composer analyse: PHPStan on the plugin, level 5, against the stubs of WordPress
+# (szepeviktor/phpstan-wordpress) and of WooCommerce, from PHP 7.4 (Requires PHP).
+# Level 6 and up want the type of every array and every return: annotations to
+# write, with no defect found behind them (22/11/2026).
+parameters:
+    level: 5
+    phpVersion:
+        min: 70400
+        max: 80699
+    paths:
+        - mailprobe.php
+        - uninstall.php
+        - includes
+    scanFiles:
+        - vendor/php-stubs/woocommerce-stubs/woocommerce-stubs.php

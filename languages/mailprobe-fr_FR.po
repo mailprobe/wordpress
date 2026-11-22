@@ -424,24 +424,24 @@ msgstr "la boîte de réception n’existe pas"
 msgid "no detail"
 msgstr "sans détail"
 
-#: includes/class-mailprobe-registration.php:51
+#: includes/class-mailprobe-registration.php:62
 msgid "Error:"
 msgstr "Erreur :"
 
-#: includes/class-mailprobe-registration.php:151
+#: includes/class-mailprobe-registration.php:223
 msgid "Disposable email addresses are not accepted. Please use your usual email address."
 msgstr "Les adresses e-mail jetables ne sont pas acceptées. Veuillez utiliser votre adresse habituelle."
 
-#: includes/class-mailprobe-registration.php:154
+#: includes/class-mailprobe-registration.php:226
 msgid "Please use a personal email address, not a shared one such as info@ or contact@."
 msgstr "Veuillez utiliser une adresse e-mail personnelle, pas une adresse partagée comme info@ ou contact@."
 
 #. translators: %s: the email address with the likely typo corrected.
-#: includes/class-mailprobe-registration.php:159
+#: includes/class-mailprobe-registration.php:231
 #, php-format
 msgid "This email address cannot receive emails. Did you mean %s?"
 msgstr "Cette adresse ne peut pas recevoir d’e-mails. Vouliez-vous dire %s ?"
 
-#: includes/class-mailprobe-registration.php:161
+#: includes/class-mailprobe-registration.php:233
 msgid "This email address cannot receive emails. Please check it and try again."
 msgstr "Cette adresse ne peut pas recevoir d’e-mails. Veuillez la vérifier et réessayer."

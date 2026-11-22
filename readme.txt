@@ -4,7 +4,7 @@ Tags: fake registration, spam registration, disposable email, email verification
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.4
+Stable tag: 0.1.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Refuses sign-ups with an email address that cannot receive emails or is disposab
 
 Fake accounts come with fake addresses: mailboxes that do not exist, domains without a mail server, throwaway inboxes. CAPTCHAs stop some robots, not the addresses. MailProbe checks the address itself, in real time, without sending any email to it.
 
-**At registration** (the WordPress registration form and the WooCommerce "My account" form), the address is checked before the account is created. The visitor is refused, with a clear message, when the address:
+**At registration** (the WordPress registration form, the sign-up page of a multisite network included, and the WooCommerce "My account" form), the address is checked before the account is created. The visitor is refused, with a clear message, when the address:
 
 * cannot receive emails: no mail server for the domain, mailbox that does not exist, bad format;
 * is disposable (a throwaway inbox);
@@ -42,7 +42,7 @@ This plugin relies on MailProbe (https://mailprobe.dev), an email verification s
 
 What is sent, and when:
 
-* When someone submits the WordPress registration form or the WooCommerce "My account" registration form, and the form has no other error: the email address entered.
+* When someone submits the WordPress registration form (the sign-up page wp-signup.php on a multisite network) or the WooCommerce "My account" registration form, and the form has no other error: the email address entered. An address sent again within ten minutes is not sent a second time.
 * After each WooCommerce order, if "Check orders" is on: the billing email of the order.
 * When you open the settings page or save a new API key: nothing but the key, to read the credit balance.
 
@@ -82,6 +82,10 @@ The plugin fires the `mailprobe_order_checked` action with the order, the verdic
 
 No, this version checks new registrations and new orders. To clean an existing list, upload it in your MailProbe dashboard.
 
+= Does it work on a multisite network? =
+
+Yes. The network's sign-up page (wp-signup.php) is checked like the registration form of a single site, with the settings of the main site, which shows that page: activate the plugin network-wide or on the main site, and add the API key there, or in wp-config.php for the whole network. Users that administrators add, from the admin, the REST API or WP-CLI, are not checked.
+
 == Screenshots ==
 
 1. A registration refused on the WooCommerce "My account" form: the address has a typo, and the message suggests the fix.
@@ -90,6 +94,10 @@ No, this version checks new registrations and new orders. To clean an existing l
 4. The settings page: API key and credit balance, registration rules, order checks and activity.
 
 == Changelog ==
+
+= 0.1.5 =
+* Multisite: the network's sign-up page (wp-signup.php) is checked too, with the settings of the main site. Up to 0.1.4, sign-ups on a multisite network went through unchecked.
+* An address is checked once within ten minutes. A sign-up that creates a site on a network asks for the address at each of its two steps, and a visitor may send a refused address again: neither uses another credit.
 
 = 0.1.4 =
 * The private note of a flagged order says why when the billing email's domain has no active mail service (for example a Microsoft 365 domain whose subscriptions have ended). MailProbe now reports these addresses as unable to receive emails: they are refused at registration and flagged on orders, like any address that cannot receive emails.

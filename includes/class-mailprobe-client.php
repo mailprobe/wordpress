@@ -110,8 +110,8 @@ class MailProbe_Client {
 	 * @param string     $method  GET or POST.
 	 * @param string     $path    Path under the API root.
 	 * @param array|null $body    JSON body, or null.
-	 * @param int        $timeout Seconds before the HTTP call gives up.
-	 * @return array|WP_Error The decoded JSON body, or the error.
+	 * @param int|float  $timeout Seconds before the HTTP call gives up.
+	 * @return mixed|WP_Error The decoded JSON body, whatever the API sent, or the error.
 	 */
 	private function request( $method, $path, $body, $timeout ) {
 		if ( '' === $this->api_key ) {

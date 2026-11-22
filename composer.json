@@ -1,0 +1,21 @@
+{
+    "name": "mailprobe/wordpress",
+    "description": "Development tools of the MailProbe WordPress plugin: the plugin itself needs no Composer.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require-dev": {
+        "php-stubs/woocommerce-stubs": "^11.2",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^2.3",
+        "szepeviktor/phpstan-wordpress": "^2.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "analyse": "phpstan analyse"
+    }
+}
